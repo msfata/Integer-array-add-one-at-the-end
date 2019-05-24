@@ -1,0 +1,40 @@
+/**
+ * @author msfata ProgrammingHelp
+ *
+ */
+public class ArrayAddOneINteger {
+	private static int[] arrayIntAddOne(int[] array) {
+		/*
+		 * make it string
+		 */
+		String temp = "";
+		for (int i = 0; i < array.length; i++) {
+			temp += array[i];
+		}
+		/*
+		 * add one to it and back to string
+		 */
+		int addOne = Integer.parseInt(temp) + 1;
+		temp = String.valueOf(addOne);
+
+		/*
+		 * from string back to int array
+		 */
+		array = new int[temp.length()];
+		for (int i = 0; i < temp.length(); i++) {
+			array[i] = Character.digit(temp.charAt(i), temp.length());
+		}
+		return array;
+	}
+
+	/*
+	 * test it
+	 */
+	public static void main(String[] args) {
+		int[] arr = { 9, 9, 9, 9 };
+		int[] temp = arrayIntAddOne(arr);
+		for (int i : temp) {
+			System.out.print(i);
+		}
+	}
+}
